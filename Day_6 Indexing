@@ -1,0 +1,65 @@
+Objective
+Today we will expand our knowledge of strings, combining it with what we have already learned about loops. Check out the Tutorial tab for learning materials and an instructional video.
+
+Task
+Given a string, S, of length N that is indexed from 0 to N-1 , print its even-indexed and odd-indexed characters as 2 space-separated strings on a single line (see the Sample below for more detail).
+
+Note: 0 is considered to be an even index.
+
+Example
+
+s=abcdef
+Print abc def
+
+Input Format
+
+The first line contains an integer, T (the number of test cases).
+Each line i of the T subsequent lines contain a string, S.
+
+Constraints
+1<=T<=10
+Output Format
+
+For each String  (where ), print 's even-indexed characters, followed by a space, followed by 's odd-indexed characters.
+
+Sample Input
+
+2
+Hacker
+Rank
+Sample Output
+
+Hce akr
+Rn ak
+Explanation
+
+Test Case 0: 
+
+
+
+
+
+
+The even indices are , , and , and the odd indices are , , and . We then print a single line of  space-separated strings; the first string contains the ordered characters from 's even indices (), and the second string contains the ordered characters from 's odd indices ().
+
+Test Case 1: 
+
+
+
+
+The even indices are  and , and the odd indices are  and . We then print a single line of  space-separated strings; the first string contains the ordered characters from 's even indices (), and the second string contains the ordered characters from 's odd indices ().
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+T=int(input())
+for i in range(0,T):
+    S=str(input())
+    N=len(S)
+    final_even_word=""
+    final_odd_word=""
+    for number in range(N):
+        if number == 0 or number % 2 == 0:
+            new_even_letter=S[number]
+            final_even_word = final_even_word + new_even_letter
+        else:
+            new_odd_letter = S[number]
+            final_odd_word= final_odd_word+new_odd_letter
+    print(final_even_word + " " + final_odd_word)
