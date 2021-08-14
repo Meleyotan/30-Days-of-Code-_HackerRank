@@ -8,7 +8,7 @@ for i in range(n):
     phone_number=str(input())
     phone_book[name]=(phone_number)
 
-while True:
+while True:#indefinite loop
     try:
         queries=str(input("What are you searching for?").lower())
         if queries in phone_book and len(queries)!=0:
